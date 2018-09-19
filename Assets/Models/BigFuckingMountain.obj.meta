@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 8a68c276981773d4e931fd56613c3bb8
+guid: 0aebf61cda285fc40a136f8e134ac6be
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Mesh1_Model
-    100002: //RootNode
-    400000: Mesh1_Model
-    400002: //RootNode
+    100000: //RootNode
+    100002: Mesh1_Model
+    400000: //RootNode
+    400002: Mesh1_Model
     2100000: Mesh1_ModelMat
     2300000: Mesh1_Model
     3300000: Mesh1_Model
