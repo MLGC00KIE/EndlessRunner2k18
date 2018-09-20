@@ -51,18 +51,25 @@ public class Visualizer : MonoBehaviour {
         lineScale = new float[lineAmount];
         lineListL = new Transform[lineAmount];
         lineListR = new Transform[lineAmount];
+        GameObject masterVisualizer = new GameObject("Visualizer");
+        GameObject L = new GameObject("Left Visualizer"); L.transform.parent = masterVisualizer.transform;
+        GameObject R = new GameObject("Right Visualizer"); R.transform.parent = masterVisualizer.transform;
 
         for (int i = 0; i < lineAmount; i++)
         {
             //GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube) as GameObject;
 
-            // instantiate right
+            // instantiate Left
             GameObject go = Instantiate(visualizerLine);
+            go.transform.parent = L.transform;
+            go.name = "VisualizerL" + i;
             lineListL[i] = go.transform;
             lineListL[i].position = new Vector3(-Distance, 0,(0.4f * i));
 
-            // instantiate left
+            // instantiate Right
             go = Instantiate(visualizerLine);
+            go.transform.parent = R.transform;
+            go.name = "VisualizerR" + i;
             lineListR[i] = go.transform;
             lineListR[i].position = new Vector3(Distance,0,(0.4f * i));
         }
