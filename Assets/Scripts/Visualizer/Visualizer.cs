@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Visualizer : MonoBehaviour {
-
+    public float Distance;
     [SerializeField]
     private readonly int sampleSize = 1024;
 
@@ -59,12 +59,12 @@ public class Visualizer : MonoBehaviour {
             // instantiate right
             GameObject go = Instantiate(visualizerLine);
             lineListL[i] = go.transform;
-            lineListL[i].position = new Vector3(-10,0,(0.4f * i));
+            lineListL[i].position = new Vector3(-Distance, 0,(0.4f * i));
 
             // instantiate left
             go = Instantiate(visualizerLine);
             lineListR[i] = go.transform;
-            lineListR[i].position = new Vector3(10,0,(0.4f * i));
+            lineListR[i].position = new Vector3(Distance,0,(0.4f * i));
         }
     }
 
