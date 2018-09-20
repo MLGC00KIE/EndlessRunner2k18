@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class GridMovement : MonoBehaviour {
     
-    public float GridSpeed;
+    public float GridSpeed = 0.1f;
     private float StartingPos;
+    public float Distance = 1.05f;
 
     // Use this for initialization
     void Start () {
@@ -17,7 +18,7 @@ public class GridMovement : MonoBehaviour {
 	void FixedUpdate () {
         transform.position += new Vector3(0, 0, -1) * GridSpeed;
 
-		if(transform.position.z <= 3367)
+		if(transform.position.z <= -Distance + StartingPos)
         transform.position = new Vector3(transform.position.x, transform.position.y, StartingPos);
         
 	}

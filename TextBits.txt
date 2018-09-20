@@ -1,0 +1,33 @@
+Welcome player, Let's get you through the basics.
+
+Move your mouse to control your ship.
+
+Good.
+
+Now let's test your reflections.
+
+Once a wall appears try to move away at the very last moment.
+
+Try again.
+
+Great.
+
+You now have one speed point!
+
+Please, Don't get hit.
+If you do, Take some time to recover the ship.
+Wait until the indicators are full and then continue to gain speedpoints.
+
+Once you have 10 speed points your ship will go faster.
+
+You can also spend speed points in the store.
+
+Please, collect as many as you can.
+
+Good luck, Player! 
+
+Game Over.
+
+I am SAGA. Your Smart Artificial Galaxy Assistent.
+
+New Highscore!

@@ -1,0 +1,3 @@
+Speed goes up every 10 points [ S P E E D U P ]
+Player can get hit once, ship gets damaged, recovers over [x] ammount of time // particles \ screenshake!
+To gain points the player needs to be in the points zone close to the obstacle, putting themselves in danger.
