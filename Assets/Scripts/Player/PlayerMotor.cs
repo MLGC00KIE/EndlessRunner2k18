@@ -8,6 +8,8 @@ public class PlayerMotor : MonoBehaviour
     private Vector3 velo = Vector3.zero;
     [SerializeField]
     private float maxX = 3;
+    [SerializeField]
+    private float tiltAmount = 0.1f;
 
     private void Start()
     {
@@ -35,7 +37,13 @@ public class PlayerMotor : MonoBehaviour
 
             if (rb.position.x < (maxX * -1))
                 rb.position = new Vector3((maxX * -1), -0.2f, 2.8f);
+            Tilt();
         }
+    }
+
+    void Tilt()
+    {
+        rb.transform.eulerAngles = new Vector3(0, 0, (rb.position.x * tiltAmount));
     }
 
 }

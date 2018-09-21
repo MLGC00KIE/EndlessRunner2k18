@@ -717,6 +717,15 @@ Prefab:
       propertyPath: sensitivity
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 4687770182796236, guid: f711d6319fdfb9642a15b8ade1f37352, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114320206885174012, guid: f711d6319fdfb9642a15b8ade1f37352,
+        type: 2}
+      propertyPath: tiltAmount
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f711d6319fdfb9642a15b8ade1f37352, type: 2}
   m_IsPrefabAsset: 0
