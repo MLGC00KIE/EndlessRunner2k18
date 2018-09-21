@@ -11,4 +11,12 @@ public class MouseLock : MonoBehaviour {
             Cursor.lockState = CursorLockMode.None;
 
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+            setLockStatus(true);
+        if (Input.GetKeyDown(KeyCode.Escape))
+            setLockStatus(false);
+    }
 }

@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
 
     [SerializeField]
-    private float speed = 5f;
+    private float sensitivity = 0.5f;
 
     private PlayerMotor m;
 
@@ -16,13 +16,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        // movement
-        float xMovement = Input.GetAxisRaw("Mouse X");
-        Vector3 HorizontalMov = transform.right * xMovement;
-        Vector3 Velocity = (HorizontalMov).normalized * speed;
-        m.Move(Velocity);
-        // /movement
-
+        float h = sensitivity * Input.GetAxis("Mouse X");
+        Vector3 delta = new Vector3(h, 0, 0);
+        m.Move(delta);
     }
-
 }

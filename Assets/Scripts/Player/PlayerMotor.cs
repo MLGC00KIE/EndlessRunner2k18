@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 [RequireComponent(typeof(Rigidbody))]
@@ -28,7 +26,7 @@ public class PlayerMotor : MonoBehaviour
     {
         if (velo != Vector3.zero)
         {
-            rb.MovePosition(rb.position + velo * Time.fixedDeltaTime);
+            rb.position += velo;
         }
     }
 }
