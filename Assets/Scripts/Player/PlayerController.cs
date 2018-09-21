@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private float sensitivity = 0.5f;
-
     private PlayerMotor m;
 
     private void Start()
