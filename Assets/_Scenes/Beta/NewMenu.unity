@@ -1956,7 +1956,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1938852840}
-        m_MethodName: SetActive
+        m_MethodName: Deactivate
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 835969533}
