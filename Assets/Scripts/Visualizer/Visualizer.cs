@@ -150,4 +150,15 @@ public class Visualizer : MonoBehaviour {
         }
         pitchValue = freqN * (samplerate / 2) / sampleSize;
     }
+
+    public Dictionary<string, float> getAudioData()
+    {
+        Dictionary<string, float> dict = new Dictionary<string, float>();
+
+        dict.Add("rms", rmsValue);
+        dict.Add("db", dbValue);
+        dict.Add("pitch", pitchValue);
+
+        return dict;
+    }
 }
