@@ -17,6 +17,11 @@ public class Settings : MonoBehaviour {
 
     private bool fullscreen;
 
+    private void Start()
+    {
+        DeleteData();
+    }
+
     void Awake(){
         MouseMenu.value = PlayerPrefs.GetFloat("MouseSpeed", 0.2f);
         MusicMenu.value = PlayerPrefs.GetFloat("MusicVolume", 0.60f);
@@ -37,16 +42,14 @@ public class Settings : MonoBehaviour {
         if (FullToggle.isOn){
             PlayerPrefs.SetInt("FullScreenMode", 1);
             Screen.fullScreen = true;
-        }
-        else{
+        }else{
             PlayerPrefs.SetInt("FullScreenMode", 0);
             Screen.fullScreen = false;
         }
 
         if (vSync.isOn){
             QualitySettings.vSyncCount = 1;
-        }
-        else{
+        }else{
             QualitySettings.vSyncCount = 0;
         }
     }
@@ -66,6 +69,11 @@ public class Settings : MonoBehaviour {
     ///////Quality
     public void QualityChange()
     {
+        string[] names;
+        names = QualitySettings.names;
+
+        Debug.Log(names[0] + names[1] + names[2]);
+
         if (QualMenu.value == 0){
             ChangeQ(0);
         }
