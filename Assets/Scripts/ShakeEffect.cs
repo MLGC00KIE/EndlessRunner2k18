@@ -3,18 +3,20 @@
 public class ShakeEffect : MonoBehaviour
 {
     public float Magnitude = 0.5f;
+    public bool XOrZMode;
 
-    private Vector3 m_startPos;
+    Vector3 m_startPos;
+    float x, y, z;
 
-    private void Start()
-    {
+    void Start(){
         m_startPos = transform.localPosition;
     }
 
-    private void Update()
-    {
-        float x = Random.Range(-Magnitude, Magnitude);
-        float z = Random.Range(-Magnitude, Magnitude);
-        transform.localPosition = m_startPos + new Vector3(x, 0.0f, z);
+    private void Update(){
+            x = Random.Range(-Magnitude, Magnitude);
+            y = Random.Range(-Magnitude, Magnitude);
+            z = Random.Range(-Magnitude, Magnitude);
+
+        transform.localPosition = m_startPos + new Vector3(x, y, z);
     }
 }
