@@ -17,7 +17,7 @@ public class MenuManager : MonoBehaviour {
 
     public void ChangeLevel(string LevelName)
     {
-        ChangeLevel(LevelName);
+        SceneManager.LoadScene(LevelName);
     }
 
     public void ApplicationQuit()

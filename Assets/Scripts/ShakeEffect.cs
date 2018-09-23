@@ -3,7 +3,6 @@
 public class ShakeEffect : MonoBehaviour
 {
     public float Magnitude = 0.5f;
-    public bool XOrZMode;
 
     Vector3 m_startPos;
     float x, y, z;
