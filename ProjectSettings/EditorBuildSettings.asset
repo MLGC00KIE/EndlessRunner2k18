@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Beta/Settings.unity
     guid: 63291cb5f72f5904eb809f63bea92339
+  - enabled: 1
+    path: Assets/_Scenes/error.unity
+    guid: 330b630785a907e4ca89de2c7a02b731
   m_configObjects: {}

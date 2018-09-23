@@ -17,7 +17,11 @@ public class MenuManager : MonoBehaviour {
 
     public void ChangeLevel(string LevelName)
     {
-        SceneManager.LoadScene(LevelName);
+        if (Application.CanStreamedLevelBeLoaded(LevelName)){
+            SceneManager.LoadScene(LevelName);
+            }else{
+            SceneManager.LoadScene("error");
+        }
     }
 
     public void ApplicationQuit()
