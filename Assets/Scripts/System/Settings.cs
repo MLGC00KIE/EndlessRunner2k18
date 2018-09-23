@@ -16,11 +16,7 @@ public class Settings : MonoBehaviour {
     public Text MouseText;
 
     private bool fullscreen;
-
-    private void Start()
-    {
-        DeleteData();
-    }
+    
 
     void Awake(){
         MouseMenu.value = PlayerPrefs.GetFloat("MouseSpeed", 0.2f);
