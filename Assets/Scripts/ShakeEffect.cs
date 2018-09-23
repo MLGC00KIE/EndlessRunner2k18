@@ -14,7 +14,7 @@ public class ShakeEffect : MonoBehaviour
     private void Update()
     {
         float x = Random.Range(-Magnitude, Magnitude);
-        float y = Random.Range(-Magnitude, Magnitude);
-        transform.localPosition = m_startPos + new Vector3(x, y, 0.0f);
+        float z = Random.Range(-Magnitude, Magnitude);
+        transform.localPosition = m_startPos + new Vector3(x, 0.0f, z);
     }
 }
