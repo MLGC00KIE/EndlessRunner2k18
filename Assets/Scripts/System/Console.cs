@@ -19,7 +19,7 @@ public class Console : MonoBehaviour {
         {
             if (SplitCommand[1] == "true" || SplitCommand[1] == "1")
             {
-                ConsoleText.text = "Cheats are now: <color=cyan><b>ENABLED</b></color>.\n<color=yellow><b>With great power comes great responsibility</b></color>\n" + ConsoleText.text;
+                ConsoleText.text = "Cheats are now: <color=cyan><b>ENABLED</b></color>.\nRemember!\n<color=yellow><b>With great power comes great responsibility</b></color>\n" + ConsoleText.text;
                 active = true;
             }
             if (SplitCommand[1] == "false" || SplitCommand[1] == "0")
