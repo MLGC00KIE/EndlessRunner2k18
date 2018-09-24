@@ -677,7 +677,11 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: '________________________________
 
-    <color=lime><b>CONSOLE 2.0:</b></color>'
+    <color=lime><b><size=24>CONSOLE 2.0:</size></b></color>
+
+    ________________________________
+
+    <size=10>Awaiting input.</size>'
 --- !u!222 &1653225941
 CanvasRenderer:
   m_ObjectHideFlags: 0
