@@ -3,12 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
 public class Console : MonoBehaviour {
+
     public InputField InputField;
     string Command;
     bool active;
     public Text ConsoleText;
+    
+    bool Toggle;
+    public GameObject TargetPos;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown("`"))
+        {
+            Toggle = !Toggle;
+        }
+
+        if (Toggle){
+            transform.position = Vector3.MoveTowards(transform.position, TargetPos.transform.position, 150);
+        }else{
+            transform.position = Vector3.MoveTowards(transform.position, TargetPos.transform.position - new Vector3(2000,0,0), 150);
+        }
+    }
 
     public void NewCommand(){
         Command = InputField.text;
