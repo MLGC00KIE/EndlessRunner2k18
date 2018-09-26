@@ -9,6 +9,8 @@ public class Settings : MonoBehaviour {
     public Dropdown ResMenu;
     public Dropdown QualMenu;
     public Toggle FullToggle;
+    public Toggle Percentage;
+    public Toggle FPS;
     public Toggle vSync;
     public Slider MouseMenu;
     public Slider MusicMenu;
@@ -26,10 +28,29 @@ public class Settings : MonoBehaviour {
         AudioMenu.value = PlayerPrefs.GetFloat("AudioVolume", 0.80f);
         ResMenu.value = PlayerPrefs.GetInt("ResolutionValue", 0);
         QualMenu.value = PlayerPrefs.GetInt("QualityValue", 0);
-        if (PlayerPrefs.GetInt("FullScreenMode", 0) == 0) {
+
+        if (PlayerPrefs.GetInt("FullScreenMode", 0) == 0){
             FullToggle.isOn = false;
         }else{
             FullToggle.isOn = true;
+        }
+
+        if (PlayerPrefs.GetInt("FPS", 0) == 0){
+            FPS.isOn = false;
+        }else{
+            FPS.isOn = true;
+        }
+
+        if (PlayerPrefs.GetInt("Percentage", 0) == 0){
+            Percentage.isOn = false;
+        }else{
+            Percentage.isOn = true;
+        }
+
+        if (PlayerPrefs.GetInt("vSync", 0) == 0){
+            vSync.isOn = false;
+        }else{
+            vSync.isOn = true;
         }
     }
 
@@ -46,9 +67,22 @@ public class Settings : MonoBehaviour {
         }
 
         if (vSync.isOn){
+            PlayerPrefs.SetInt("vSync", 1);
             QualitySettings.vSyncCount = 1;
         }else{
+            PlayerPrefs.SetInt("vSync", 0);
             QualitySettings.vSyncCount = 0;
+        }
+        if (FPS.isOn){
+            PlayerPrefs.SetInt("FPS", 1);
+        }else{
+            PlayerPrefs.SetInt("FPS", 0);
+        }
+
+        if (Percentage.isOn){
+            PlayerPrefs.SetInt("Percentage", 1);
+        }else{
+            PlayerPrefs.SetInt("Percentage", 0);
         }
     }
 
@@ -73,9 +107,6 @@ public class Settings : MonoBehaviour {
     {
         string[] names;
         names = QualitySettings.names;
-
-        Debug.Log(names[0] + names[1] + names[2]);
-
         if (QualMenu.value == 0){
             ChangeQ(0);
         }
