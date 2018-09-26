@@ -56,8 +56,9 @@ public class Settings : MonoBehaviour {
 
     void Update(){
         PlayerPrefs.Save();
-        MouseText.text = "(" + MouseMenu.value.ToString("F2") + ")";
+    }
 
+    public void Toggles(){
         if (FullToggle.isOn){
             PlayerPrefs.SetInt("FullScreenMode", 1);
             Screen.fullScreen = true;
@@ -73,6 +74,7 @@ public class Settings : MonoBehaviour {
             PlayerPrefs.SetInt("vSync", 0);
             QualitySettings.vSyncCount = 0;
         }
+
         if (FPS.isOn){
             PlayerPrefs.SetInt("FPS", 1);
         }else{
@@ -94,6 +96,7 @@ public class Settings : MonoBehaviour {
     //SLIDERS
     public void MouseSpeed(){
         PlayerPrefs.SetFloat("MouseSpeed", MouseMenu.value);
+        MouseText.text = "(" + MouseMenu.value.ToString("F2") + ")";
     }
     public void AudioVolume(){
         PlayerPrefs.SetFloat("AudioVolume", AudioMenu.value);
