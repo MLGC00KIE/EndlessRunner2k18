@@ -6,13 +6,24 @@ using System.Diagnostics;
 
 public class BatteryLevel : MonoBehaviour {
     public Text Percentage;
-    void Update () {
-        if (SystemInfo.batteryLevel < 0)
+    float color1;
+    float color2;
+    float PCBattery;
+    void Update ()
+    {
+        PCBattery = SystemInfo.batteryLevel;
+
+        color2 = 1 * PCBattery;
+        color1 = -color2 + 1;
+
+        Percentage.color = new Color(color1, color2, 0);
+        if (PCBattery < 0)
         {
-            Percentage.text = "<color=red><size=18><b>[No battery found.]</b></size></color>\n<size=12>(Are you on a desktop?)</size>";
-        }
-        else{
-            Percentage.text = "["+(SystemInfo.batteryLevel * 100) + "%]\n<size=12>(" + SystemInfo.batteryStatus + ")</size>";
+            Percentage.text = "<size=18><b><color=blue>[No battery found.]</color></b></size>\n<size=12><color=white>(Are you on a desktop?)</color></size>";
+        }        
+        else
+        {
+            Percentage.text = "[" + (PCBattery * 100) + "%]\n<size=12><color=white>(" + SystemInfo.batteryStatus + ")</color></size>";
         }
     }
 }
