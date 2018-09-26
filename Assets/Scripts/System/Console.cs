@@ -19,13 +19,14 @@ public class Console : MonoBehaviour {
         if (Input.GetKeyDown("`"))
         {
             Toggle = !Toggle;
+            if (Toggle){
+                transform.position = TargetPos.transform.position;
+            }else{
+                transform.position = TargetPos.transform.position - new Vector3(0, 0, 2000);
+            }
         }
 
-        if (Toggle){
-            transform.position = Vector3.MoveTowards(transform.position, TargetPos.transform.position, 150);
-        }else{
-            transform.position = Vector3.MoveTowards(transform.position, TargetPos.transform.position - new Vector3(2000,0,0), 150);
-        }
+        
     }
 
     public void NewCommand() {

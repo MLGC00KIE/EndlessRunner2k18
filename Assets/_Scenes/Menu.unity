@@ -8295,17 +8295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1953e334f0291104ca8279d13a1ea6a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1788434870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1788434868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8334691f18d78bb4cb34292e689130c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1788434871 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224343804186638572, guid: 59b859a9e6314464f99c251ff9f18e48,
