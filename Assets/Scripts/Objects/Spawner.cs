@@ -12,6 +12,8 @@ public class Spawner : MonoBehaviour {
     private GameObject Parent;
     [SerializeField]
     private float maxX;
+    [SerializeField]
+    private float timeBetweenSpawn;
 
     private Random r = new Random();
     private float elapsed;
@@ -34,18 +36,18 @@ public class Spawner : MonoBehaviour {
             //Debug.Log(rmsValue);
         }
         elapsed += Time.deltaTime;
-        //if (elapsed >= 1f)
-        //{
-        //    elapsed = elapsed % 1f;
-        //    spawnRandomCube();
-        //}
-        spawnRandomCube();
-
-
-
-
-
+        if (elapsed >= timeBetweenSpawn)
+        {
+            elapsed = elapsed % timeBetweenSpawn;
+            spawnRandomCube();
         }
+        //spawnRandomCube();
+
+
+
+
+
+    }
 
     void spawnRandomCube()
     {
