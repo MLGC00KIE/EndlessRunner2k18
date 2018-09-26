@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
+    public Text Version;
+    private void Awake(){
+        Version.text = "Ver: " + Application.version;
+    }
 
     public void Activate(GameObject Object)
     {
