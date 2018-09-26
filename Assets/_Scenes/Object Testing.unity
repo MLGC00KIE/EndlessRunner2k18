@@ -8426,7 +8426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Visualizer: {fileID: 2125550607}
-  Cube: {fileID: 1972862119173394, guid: 1f9ee15fc1220e04bb7616f6c39299d2, type: 2}
+  Cube: {fileID: 1860042976970306, guid: bcc4c04ba6f96d240b10a278bb062afe, type: 2}
   maxX: 9
   timeBetweenSpawn: 0.3
 --- !u!1 &1915746510
