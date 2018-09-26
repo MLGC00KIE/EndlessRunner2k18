@@ -14,11 +14,13 @@ public class Settings : MonoBehaviour {
     public Slider MusicMenu;
     public Slider AudioMenu;
     public Text MouseText;
+    public InputField Name;
 
     private bool fullscreen;
     
 
     void Awake(){
+        Name.text = PlayerPrefs.GetString("Username", "PlayerName");
         MouseMenu.value = PlayerPrefs.GetFloat("MouseSpeed", 0.2f);
         MusicMenu.value = PlayerPrefs.GetFloat("MusicVolume", 0.60f);
         AudioMenu.value = PlayerPrefs.GetFloat("AudioVolume", 0.80f);
@@ -50,6 +52,10 @@ public class Settings : MonoBehaviour {
         }
     }
 
+    public void ChangeName(){
+        PlayerPrefs.SetString("Username", Name.text.ToUpper());
+        Name.text = Name.text.ToUpper();
+    }
 
     //SLIDERS
     public void MouseSpeed(){
