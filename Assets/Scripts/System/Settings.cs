@@ -55,37 +55,47 @@ public class Settings : MonoBehaviour {
     }
 
     void Update(){
-        PlayerPrefs.Save();
-    }
-
-    public void Toggles(){
-        if (FullToggle.isOn){
+        if (FullToggle.isOn)
+        {
             PlayerPrefs.SetInt("FullScreenMode", 1);
             Screen.fullScreen = true;
-        }else{
+        }
+        else
+        {
             PlayerPrefs.SetInt("FullScreenMode", 0);
             Screen.fullScreen = false;
         }
 
-        if (vSync.isOn){
+        if (vSync.isOn)
+        {
             PlayerPrefs.SetInt("vSync", 1);
             QualitySettings.vSyncCount = 1;
-        }else{
+        }
+        else
+        {
             PlayerPrefs.SetInt("vSync", 0);
             QualitySettings.vSyncCount = 0;
         }
 
-        if (FPS.isOn){
+        if (FPS.isOn)
+        {
             PlayerPrefs.SetInt("FPS", 1);
-        }else{
+        }
+        else
+        {
             PlayerPrefs.SetInt("FPS", 0);
         }
 
-        if (Percentage.isOn){
+        if (Percentage.isOn)
+        {
             PlayerPrefs.SetInt("Percentage", 1);
-        }else{
+        }
+        else
+        {
             PlayerPrefs.SetInt("Percentage", 0);
         }
+
+        PlayerPrefs.Save();
     }
 
     public void ChangeName(){
@@ -94,11 +104,16 @@ public class Settings : MonoBehaviour {
     }
 
     //SLIDERS
-    public void SlideChange(){
+    public void MouseSpeed(){
         PlayerPrefs.SetFloat("MouseSpeed", MouseMenu.value);
         MouseText.text = "(" + MouseMenu.value.ToString("F2") + ")";
+    }
+    public void AudioVolume(){
         PlayerPrefs.SetFloat("AudioVolume", AudioMenu.value);
+    }
+    public void MusicVolume(){
         PlayerPrefs.SetFloat("MusicVolume", MusicMenu.value);
+        PlayerPrefs.Save();
     }
 
     ///////Quality

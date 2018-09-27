@@ -1,0 +1,17 @@
+diff a/Assets/Scripts/System/Settings.cs b/Assets/Scripts/System/Settings.cs	(rejected hunks)
+@@ -94,14 +94,10 @@
+     }
+ 
+     //SLIDERS
+-    public void MouseSpeed(){
++    public void SlideChange(){
+         PlayerPrefs.SetFloat("MouseSpeed", MouseMenu.value);
+         MouseText.text = "(" + MouseMenu.value.ToString("F2") + ")";
+-    }
+-    public void AudioVolume(){
+         PlayerPrefs.SetFloat("AudioVolume", AudioMenu.value);
+-    }
+-    public void MusicVolume(){
+         PlayerPrefs.SetFloat("MusicVolume", MusicMenu.value);
+     }
+ 
