@@ -21,7 +21,9 @@ public class Console : MonoBehaviour {
             Toggle = !Toggle;
             if (Toggle){
                 transform.position = TargetPos.transform.position;
+                Cursor.lockState = CursorLockMode.None;
             }else{
+                Cursor.lockState = CursorLockMode.Locked;
                 transform.position = TargetPos.transform.position - new Vector3(0, 0, 2000);
             }
         }

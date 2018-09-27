@@ -94,10 +94,11 @@ namespace Kino
 
         void Update()
         {
-            // Enable motion vector rendering if reuqired.
-            if (_shutterAngle > 0)
-                GetComponent<Camera>().depthTextureMode |=
-                    DepthTextureMode.Depth | DepthTextureMode.MotionVectors;
+                // Enable motion vector rendering if reuqired.
+                if (_shutterAngle > 0)
+                    GetComponent<Camera>().depthTextureMode |=
+                        DepthTextureMode.Depth | DepthTextureMode.MotionVectors;
+            
         }
 
         void OnRenderImage(RenderTexture source, RenderTexture destination)

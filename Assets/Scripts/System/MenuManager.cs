@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
     public Text Version;
-    private void Awake(){
-        Version.text = "Ver: " + Application.version;
+    private void Awake() {
+        if (Version != null) { 
+            Version.text = "Ver: " + Application.version;
+        }
+        QualitySettings.vSyncCount = PlayerPrefs.GetInt("vSync", 1);
     }
 
     public void Activate(GameObject Object)

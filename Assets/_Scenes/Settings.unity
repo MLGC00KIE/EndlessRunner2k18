@@ -1772,7 +1772,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 86852743}
-        m_MethodName: MouseSpeed
+        m_MethodName: SlideChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2796,7 +2796,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 86852743}
-        m_MethodName: AudioVolume
+        m_MethodName: SlideChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10232,7 +10232,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 86852743}
-        m_MethodName: MusicVolume
+        m_MethodName: SlideChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

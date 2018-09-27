@@ -7,9 +7,11 @@ using UnityEngine.UI;
 public class Pause : MonoBehaviour {
     bool toggle;
     public GameObject GUI;
+    public AudioSource song;
     public Slider MouseSlider;
     public Text Mouse;
     void Start(){
+        Cursor.lockState = CursorLockMode.Locked;
         MouseSlider.value = PlayerPrefs.GetFloat("MouseSpeed", 0.2f);
     }
 
@@ -19,7 +21,6 @@ public class Pause : MonoBehaviour {
     }
 
     void Update () {
-
         if (Input.GetMouseButtonDown(1) || Input.GetKeyDown("escape") || Input.GetKeyDown("p")){
             pauseSystem();
         }
@@ -29,20 +30,25 @@ public class Pause : MonoBehaviour {
     }
 
     public void restart(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
+        Time.timeScale = 1;
+        Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
     }
 
     public void quit(){
+        Time.timeScale = 1;
         SceneManager.LoadScene("Menu");
     }
 
-    public void pauseSystem()
-    {
+    public void pauseSystem(){
         toggle = !toggle;
         GUI.SetActive(toggle);
         if (toggle){
+            song.Pause();
+            Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
         }else{
+            song.Play();
+            Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
         }
     }

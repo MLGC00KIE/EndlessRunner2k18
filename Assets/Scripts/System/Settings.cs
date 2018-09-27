@@ -47,7 +47,7 @@ public class Settings : MonoBehaviour {
             Percentage.isOn = true;
         }
 
-        if (PlayerPrefs.GetInt("vSync", 0) == 0){
+        if (PlayerPrefs.GetInt("vSync", 1) == 0){
             vSync.isOn = false;
         }else{
             vSync.isOn = true;
@@ -94,14 +94,10 @@ public class Settings : MonoBehaviour {
     }
 
     //SLIDERS
-    public void MouseSpeed(){
+    public void SlideChange(){
         PlayerPrefs.SetFloat("MouseSpeed", MouseMenu.value);
         MouseText.text = "(" + MouseMenu.value.ToString("F2") + ")";
-    }
-    public void AudioVolume(){
         PlayerPrefs.SetFloat("AudioVolume", AudioMenu.value);
-    }
-    public void MusicVolume(){
         PlayerPrefs.SetFloat("MusicVolume", MusicMenu.value);
     }
 
