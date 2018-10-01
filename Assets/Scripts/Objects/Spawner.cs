@@ -6,7 +6,6 @@ public class Spawner : MonoBehaviour {
     private GameObject Visualizer;
     [SerializeField]
     private GameObject Cube;
-    List<GameObject> objectList = new List<GameObject>();
     private Visualizer Vis;
     private Dictionary<string, float> dictAudio;
     private GameObject Parent;
@@ -15,7 +14,6 @@ public class Spawner : MonoBehaviour {
     [SerializeField]
     private float timeBetweenSpawn;
 
-    private Random r = new Random();
     private float elapsed;
 
     private void Awake()

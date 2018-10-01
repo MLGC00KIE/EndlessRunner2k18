@@ -7049,6 +7049,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &1097380691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1036746258532244, guid: f711d6319fdfb9642a15b8ade1f37352,
+    type: 2}
+  m_PrefabInternal: {fileID: 1664498209}
+--- !u!114 &1097380692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097380691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf249c8e3b8d1084b9788a408ebb2416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1098220039
 GameObject:
   m_ObjectHideFlags: 0
@@ -8283,7 +8299,27 @@ Prefab:
       propertyPath: tiltAmount
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4626481841100272, guid: f711d6319fdfb9642a15b8ade1f37352, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.06975647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4626481841100272, guid: f711d6319fdfb9642a15b8ade1f37352, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9975641
+      objectReference: {fileID: 0}
+    - target: {fileID: 4626481841100272, guid: f711d6319fdfb9642a15b8ade1f37352, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1065904097511652, guid: f711d6319fdfb9642a15b8ade1f37352, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114888116566430210, guid: f711d6319fdfb9642a15b8ade1f37352, type: 2}
+    - {fileID: 114295163345729490, guid: f711d6319fdfb9642a15b8ade1f37352, type: 2}
+    - {fileID: 114509526462142218, guid: f711d6319fdfb9642a15b8ade1f37352, type: 2}
+    - {fileID: 114421801357518078, guid: f711d6319fdfb9642a15b8ade1f37352, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: f711d6319fdfb9642a15b8ade1f37352, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1746622607

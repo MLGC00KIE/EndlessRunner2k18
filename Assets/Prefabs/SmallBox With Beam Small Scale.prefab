@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 65468567430144692}
   m_Layer: 0
   m_Name: SmallBox With Beam Small Scale
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
