@@ -55,43 +55,31 @@ public class Settings : MonoBehaviour {
     }
 
     void Update(){
-        if (FullToggle.isOn)
-        {
+        if (FullToggle.isOn){
             PlayerPrefs.SetInt("FullScreenMode", 1);
             Screen.fullScreen = true;
-        }
-        else
-        {
+        }else{
             PlayerPrefs.SetInt("FullScreenMode", 0);
             Screen.fullScreen = false;
         }
 
-        if (vSync.isOn)
-        {
+        if (vSync.isOn){
             PlayerPrefs.SetInt("vSync", 1);
             QualitySettings.vSyncCount = 1;
-        }
-        else
-        {
+        }else{
             PlayerPrefs.SetInt("vSync", 0);
             QualitySettings.vSyncCount = 0;
         }
 
-        if (FPS.isOn)
-        {
+        if (FPS.isOn){
             PlayerPrefs.SetInt("FPS", 1);
-        }
-        else
-        {
+        }else{
             PlayerPrefs.SetInt("FPS", 0);
         }
 
-        if (Percentage.isOn)
-        {
+        if (Percentage.isOn){
             PlayerPrefs.SetInt("Percentage", 1);
-        }
-        else
-        {
+        }else{
             PlayerPrefs.SetInt("Percentage", 0);
         }
 
@@ -117,8 +105,7 @@ public class Settings : MonoBehaviour {
     }
 
     ///////Quality
-    public void QualityChange()
-    {
+    public void QualityChange(){
         string[] names;
         names = QualitySettings.names;
         if (QualMenu.value == 0){
@@ -168,8 +155,7 @@ public class Settings : MonoBehaviour {
 
 
     ///////DATA
-    public void DeleteData()
-    {
+    public void DeleteData(){
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("Boot");
     }
