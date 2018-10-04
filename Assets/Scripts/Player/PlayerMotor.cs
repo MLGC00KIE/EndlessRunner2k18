@@ -10,6 +10,10 @@ public class PlayerMotor : MonoBehaviour
     private float maxX = 3;
     [SerializeField]
     private float tiltAmount = 0.1f;
+    [SerializeField]
+    private float tiltSpeed;
+    [SerializeField]
+    private float movementLerpSpeed;
 
     private void Start()
     {
@@ -37,13 +41,14 @@ public class PlayerMotor : MonoBehaviour
 
             if (rb.position.x < (maxX * -1))
                 rb.position = new Vector3((maxX * -1), -0.2f, 2.8f);
-            Tilt();
+            //Tilt();
         }
     }
 
-    void Tilt()
-    {
-        rb.transform.eulerAngles = new Vector3(0, 0, (rb.position.x * tiltAmount));
-    }
+    //void Tilt()
+    //{
+    //    //rb.transform.eulerAngles = new Vector3(0, 0, (velo.x * tiltAmount));
+    //    rb.transform.eulerAngles = Vector3.Lerp(new Vector3(0,0,transform.rotation.y), new Vector3(0, 0, (velo.x * tiltAmount)), tiltSpeed);
+    //}
 
 }

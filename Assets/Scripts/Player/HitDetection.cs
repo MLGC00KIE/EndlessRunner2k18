@@ -32,16 +32,10 @@ public class HitDetection : MonoBehaviour {
     {
         if (col.transform.tag == "wall")
         {
-            if (canHit)
-            {
-                Debug.Log("got hit by " + col.transform.name);
-                l.SetHealth(l.GetHealth() - 1);
-                elapsed = elapsed % timeBetweenHit;
-                canHit = false;
-            } else if (!canHit)
-            {
-                Debug.Log("nah fam");
-            }
+            Debug.Log("got hit by " + col.transform.name);
+            l.SetHealth(l.GetHealth() - 1);
+            Destroy(col.collider);
+
         }
     }
 

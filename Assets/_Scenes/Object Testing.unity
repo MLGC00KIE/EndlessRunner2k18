@@ -8245,6 +8245,21 @@ Prefab:
       propertyPath: timeBetweenHit
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114320206885174012, guid: f711d6319fdfb9642a15b8ade1f37352,
+        type: 2}
+      propertyPath: tiltAmount
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114320206885174012, guid: f711d6319fdfb9642a15b8ade1f37352,
+        type: 2}
+      propertyPath: tiltSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114320206885174012, guid: f711d6319fdfb9642a15b8ade1f37352,
+        type: 2}
+      propertyPath: movementLerpSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f711d6319fdfb9642a15b8ade1f37352, type: 2}
   m_IsPrefabAsset: 0

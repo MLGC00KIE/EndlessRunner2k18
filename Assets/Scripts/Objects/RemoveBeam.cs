@@ -9,6 +9,7 @@ public class RemoveBeam : MonoBehaviour {
 
     private void Awake()
     {
+        // destroy the beam after making it look like it spawns the cube
         Destroy(this.gameObject, secondsBeforeDelete);
     }
 
