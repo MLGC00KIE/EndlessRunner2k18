@@ -14,12 +14,14 @@ public class ScoreZone : MonoBehaviour {
     private float distanceFromBox;
     [SerializeField]
     private float extraDistanceFromBox;
+    private Score scoreScript;
 
 	// Use this for initialization
 	void Start () {
         // get box size
         boxSize = GetComponent<Collider>().bounds.size;
         boxWidth = boxSize.x;
+        scoreScript = FindObjectOfType<Score>();
 
     }
 	
@@ -35,6 +37,7 @@ public class ScoreZone : MonoBehaviour {
             if (hit.transform.tag == "Player")
             {
                 // add score code thingy
+                scoreScript.AddScore(1);
             }
         }
 
@@ -46,6 +49,7 @@ public class ScoreZone : MonoBehaviour {
             if (hit.transform.tag == "Player")
             {
                 // add score thingy for being closer
+                scoreScript.AddScore(3);
             }
         }
 
