@@ -46,6 +46,7 @@ public class Spawner : MonoBehaviour {
             elapsed = elapsed % timeBetweenSpawn;
             spawnRandomCube();
         }
+        spawnRandomCube();
 
 
 
@@ -67,6 +68,6 @@ public class Spawner : MonoBehaviour {
     // read the function name...
     float getRandomX()
     {
-        return (Random.Range(-maxX, maxX));
+        return (Random.Range(-maxX + 1, maxX));
     }
 }
