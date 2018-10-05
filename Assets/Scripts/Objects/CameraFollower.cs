@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraFollower : MonoBehaviour {
     [SerializeField]
     GameObject PlayerObject;
-    void FixedUpdate() {
+    void Update() {
         try {
             transform.position = new Vector3(PlayerObject.transform.position.x, transform.position.y, transform.position.z);
         }
