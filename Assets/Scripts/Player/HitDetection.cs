@@ -16,20 +16,10 @@ public class HitDetection : MonoBehaviour {
     {
         l = GetComponent<Lives>();
     }
-    // Update is called once per frame
-    void Update () {
-        elapsed += Time.deltaTime;
-        if (elapsed >= timeBetweenHit)
-        {
-            canHit = true;
-        } else
-        {
-            canHit = false;
-        }
-    }
 
     private void OnCollisionEnter(Collision col)
     {
+        // detects if the player is touching an object and deletes it
         if (col.transform.tag == "wall")
         {
             Debug.Log("got hit by " + col.transform.name);

@@ -27,11 +27,13 @@ public class PlayerMotor : MonoBehaviour
 
     public void Move(Vector3 Velocity)
     {
+        // sets velo to the value PlayerController passed in the function argument
         velo = Velocity;
     }
 
     void DoMovement()
     {
+        // move the character
         if (velo != Vector3.zero)
         {
             rb.position += velo;

@@ -20,6 +20,7 @@ public class Spawner : MonoBehaviour {
     {
         Vis = Visualizer.GetComponent<Visualizer>();
 
+        // make a new empty gameobject to use as the parent for the cubes/walls
         Parent = new GameObject();
         Parent.name = "Walls";
 
@@ -27,19 +28,24 @@ public class Spawner : MonoBehaviour {
 
     void Update()
     {
+
+        // WIP spawn cubes on music
         dictAudio = Vis.getAudioData();
         float rmsValue;
         if (dictAudio.TryGetValue("rms", out rmsValue))
         {
             //Debug.Log(rmsValue);
         }
+        // ----------------------------------
+
+
+        // spawn a cube each {timeBetweenSpawn} seconds
         elapsed += Time.deltaTime;
         if (elapsed >= timeBetweenSpawn)
         {
             elapsed = elapsed % timeBetweenSpawn;
             spawnRandomCube();
         }
-        //spawnRandomCube();
 
 
 
@@ -47,6 +53,7 @@ public class Spawner : MonoBehaviour {
 
     }
 
+    // spawns a cube on a random x position
     void spawnRandomCube()
     {
         GameObject go = Instantiate(Cube, Parent.transform);
@@ -57,6 +64,7 @@ public class Spawner : MonoBehaviour {
 
     }
 
+    // read the function name...
     float getRandomX()
     {
         return (Random.Range(-maxX, maxX));

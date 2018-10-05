@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        // get mouse input and use it in a Vector3
         float h = sensitivity * Input.GetAxis("Mouse X");
         Vector3 delta = new Vector3(h, 0, 0);
         m.Move(delta);

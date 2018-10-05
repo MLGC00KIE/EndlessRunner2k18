@@ -17,6 +17,7 @@ public class ScoreZone : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        // get box size
         boxSize = GetComponent<Collider>().bounds.size;
         boxWidth = boxSize.x;
 
@@ -27,6 +28,7 @@ public class ScoreZone : MonoBehaviour {
 
         RaycastHit hit;
 
+        // check for raycasts hitting to add score to player
         Debug.DrawRay((transform.position + new Vector3(-boxWidth, 0, -distanceFromBox)), new Vector3(boxWidth, 0, 0), Color.red);
         if (Physics.Raycast((transform.position + new Vector3(-boxWidth , 0, -distanceFromBox)), new Vector3(boxWidth, 0,0), out hit))
         {
@@ -36,6 +38,8 @@ public class ScoreZone : MonoBehaviour {
             }
         }
 
+
+        // check for raycasts hitting to add score to player
         Debug.DrawRay((transform.position + new Vector3(-boxWidth / 1.5f, 0, -extraDistanceFromBox)), new Vector3(boxWidth/2, 0, 0), Color.red);
         if (Physics.Raycast((transform.position + new Vector3(-boxWidth / 1.5f, 0, -extraDistanceFromBox)), new Vector3(boxWidth/2, 0, 0), out hit))
         {

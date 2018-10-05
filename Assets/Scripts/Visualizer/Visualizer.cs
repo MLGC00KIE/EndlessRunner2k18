@@ -59,14 +59,14 @@ public class Visualizer : MonoBehaviour {
         {
             //GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube) as GameObject;
 
-            // instantiate Left
+            // instantiate Left bars
             GameObject go = Instantiate(visualizerLine);
             go.transform.parent = L.transform;
             go.name = "VisualizerL" + i;
             lineListL[i] = go.transform;
             lineListL[i].position = new Vector3(-Distance, 0,(0.4f * i));
 
-            // instantiate Right
+            // instantiate Right bars
             go = Instantiate(visualizerLine);
             go.transform.parent = R.transform;
             go.name = "VisualizerR" + i;
@@ -112,6 +112,8 @@ public class Visualizer : MonoBehaviour {
         }
     }
 
+
+    // Get the audio spectrum from whatever audio the audio emitter is playing
     private void AnalyzeSpectrum()
     {
         source.GetOutputData(samples, 0);
@@ -130,7 +132,7 @@ public class Visualizer : MonoBehaviour {
         // get sound spectrum
         source.GetSpectrumData(spectrum, 0, FFTWindow.BlackmanHarris);
 
-        // find pitch
+        // get pitch
         float maxV = 0;
         var maxN = 0;
         for (int i = 0; i < sampleSize; i++)
@@ -141,6 +143,7 @@ public class Visualizer : MonoBehaviour {
             maxN = i;
         }
 
+        // get frequency
         float freqN = maxN;
         if (maxN > 0 && maxN < sampleSize -1)
         {
@@ -151,6 +154,8 @@ public class Visualizer : MonoBehaviour {
         pitchValue = freqN * (samplerate / 2) / sampleSize;
     }
 
+
+    // function to use values in other scripts
     public Dictionary<string, float> getAudioData()
     {
         Dictionary<string, float> dict = new Dictionary<string, float>();
