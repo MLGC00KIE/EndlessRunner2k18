@@ -46,7 +46,7 @@ public class Spawner : MonoBehaviour {
             elapsed = elapsed % timeBetweenSpawn;
             spawnRandomCube();
         }
-        spawnRandomCube();
+        //spawnRandomCube();
 
 
 

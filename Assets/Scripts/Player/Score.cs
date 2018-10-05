@@ -7,8 +7,9 @@ public class Score : MonoBehaviour {
         PlayerScore = 0;
     }
 
-    public void AddScore(int Ammount){
-        PlayerScore += Ammount;
+    public void AddScore(int Amount){
+        PlayerScore += Amount;
+        GameObject.Find("ScoreUI").GetComponent<ScoreNumber>().UpdateScore(PlayerScore);
     }
 
     private void Update()
