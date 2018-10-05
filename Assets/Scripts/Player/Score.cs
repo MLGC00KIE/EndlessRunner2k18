@@ -11,5 +11,8 @@ public class Score : MonoBehaviour {
 
     public void AddScore(int Ammount){
         PlayerScore += Ammount;
+        Debug.Log(PlayerScore);
     }
+
+
 }
