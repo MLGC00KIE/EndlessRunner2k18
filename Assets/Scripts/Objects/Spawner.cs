@@ -28,6 +28,8 @@ public class Spawner : MonoBehaviour {
 
     void Update()
     {
+        //if(gameover == true){stop spawning}
+
 
         // WIP spawn cubes on music
         dictAudio = Vis.getAudioData();

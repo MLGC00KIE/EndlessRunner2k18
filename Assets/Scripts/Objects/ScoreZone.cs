@@ -22,7 +22,14 @@ public class ScoreZone : MonoBehaviour {
         boxSize = GetComponent<Collider>().bounds.size;
         boxWidth = boxSize.x;
         //scoreScript = FindObjectOfType<Score>();
-        scoreScript = GameObject.Find("Player").GetComponent<Score>();
+        try
+        {
+            scoreScript = GameObject.Find("Player").GetComponent<Score>();
+        }
+        catch
+        {
+            Debug.Log("PlayerDoesNotExist");
+        }
     }
 	
 	// Update is called once per frame

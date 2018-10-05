@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class GridMovement : MonoBehaviour {
-    
+public class GridMovement : MonoBehaviour
+{
+    [SerializeField]
+    GameObject PlayerObject;
+
     public float GridSpeed = 0.1f;
     private float StartingPos;
     public float Distance = 1.05f;
@@ -18,8 +21,21 @@ public class GridMovement : MonoBehaviour {
 	void FixedUpdate () {
         transform.position += new Vector3(0, 0, -1) * GridSpeed;
 
-		if(transform.position.z <= -Distance + StartingPos)
-        transform.position = new Vector3(transform.position.x, transform.position.y, StartingPos);
-        
+        if (transform.position.z <= -Distance + StartingPos)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, StartingPos);
+        }
+
+        /*if (GameScore == OldScore + 10)
+        {
+            OldScore = GameScore;
+            GridSpeed += 0.01f;
+        }*/
+
+
+        if (PlayerObject == null)
+        {
+            GridSpeed = 0.01f;
+        }
 	}
 }

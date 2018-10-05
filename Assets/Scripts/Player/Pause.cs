@@ -20,7 +20,10 @@ public class Pause : MonoBehaviour {
         Mouse.text = "(" + MouseSlider.value.ToString("F2") + ")";
     }
 
-    void Update () {
+    void FixedUpdate (){
+        if (GameObject.Find("Player") == null){
+            Destroy(this.gameObject);
+        }
         if (Input.GetMouseButtonDown(1) || Input.GetKeyDown("escape") || Input.GetKeyDown("p")){
             pauseSystem();
         }
@@ -28,6 +31,8 @@ public class Pause : MonoBehaviour {
             restart();
         }
     }
+
+
 
     public void restart(){
         Time.timeScale = 1;
