@@ -17,14 +17,14 @@ public class HitDetection : MonoBehaviour {
         l = GetComponent<Lives>();
     }
 
-    private void OnCollisionEnter(Collision col)
+    private void OnTriggerEnter(Collider col)
     {
         // detects if the player is touching an object and deletes it
         if (col.transform.tag == "wall")
         {
             Debug.Log("got hit by " + col.transform.name);
             l.SetHealth(l.GetHealth() - 1);
-            Destroy(col.collider);
+            Destroy(col.GetComponent<Collider>());
 
         }
     }

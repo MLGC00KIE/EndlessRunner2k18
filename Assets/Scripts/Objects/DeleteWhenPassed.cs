@@ -21,6 +21,8 @@ public class DeleteWhenPassed : MonoBehaviour {
      *                                                                                                                              
      *                                                                                                                              
      */
+
+        // deletes the cube once it passes a certain z position
         if (this.transform.position.z <= 0)
         {
             Destroy(this.gameObject);
