@@ -20,6 +20,5 @@ public class GrowAfterSpawn : MonoBehaviour
     {
         // grow in size...
         this.gameObject.transform.localScale = Vector3.Lerp(this.gameObject.transform.localScale, newScale, Time.deltaTime * speed);
-
     }
 }
