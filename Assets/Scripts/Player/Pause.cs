@@ -14,6 +14,8 @@ public class Pause : MonoBehaviour {
     Slider MouseSlider;
     [SerializeField]
     Text Mouse;
+    [SerializeField]
+    GameObject CountDown;
     void Start(){
         Cursor.lockState = CursorLockMode.Locked;
         MouseSlider.value = PlayerPrefs.GetFloat("MouseSpeed", 0.2f);
@@ -24,15 +26,18 @@ public class Pause : MonoBehaviour {
         Mouse.text = "(" + MouseSlider.value.ToString("F2") + ")";
     }
 
-    void FixedUpdate (){
-        if (GameObject.Find("Player") == null){
-            Destroy(this.gameObject);
-        }
+    void Update (){
         if (Input.GetMouseButtonDown(1) || Input.GetKeyDown("escape") || Input.GetKeyDown("p")){
             pauseSystem();
         }
         if (Input.GetMouseButtonDown(2) || Input.GetKeyDown("r")){
             restart();
+        }
+    }
+
+    void FixedUpdate(){
+        if (GameObject.Find("Player") == null){
+            Destroy(this.gameObject);
         }
     }
 
@@ -54,18 +59,23 @@ public class Pause : MonoBehaviour {
         if (toggle){
             try{
                 song.Pause();
+
             }catch{
-                Debug.Log("song not found..");
+                Debug.Log("Error: song not found..");
             }
+            GameObject.Find("Player").GetComponent<PlayerController>().Activate(false);
+            GameObject.Find("ObjectSpawner").GetComponent<Spawner>().Activate(false);
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
         }else{
             try{ 
                 song.Play();
+                gameObject.SetActive(false);
+                CountDown.SetActive(true);
             }catch{
-                Debug.Log("song not found..");
+                Debug.Log("Error: song not found..");
             }
-        Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
         }
     }

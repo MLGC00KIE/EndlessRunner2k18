@@ -10,7 +10,9 @@ public class CountDown : MonoBehaviour {
     Text Timer;
     [SerializeField]
     GameObject Overlay;
-    // Update is called once per frame
+    [SerializeField]
+    GameObject PauseScreen;
+
     void FixedUpdate (){
         CountDownTimer -= 1 * Time.deltaTime;
         if (CountDownTimer > 0.5){
@@ -24,10 +26,14 @@ public class CountDown : MonoBehaviour {
             GameObject.Find("Player").GetComponent<PlayerController>().Activate(true);
                 if (CountDownTimer < -0.25){
                 GameObject.Find("ObjectSpawner").GetComponent<Spawner>().Activate(true);
-                Destroy(this.gameObject);
+                    PauseScreen.SetActive(true);
+                    Timer.text = "";
+                    CountDownTimer = 3.5f;
+                    gameObject.SetActive(false);
+                //Destroy(this.gameObject);
                 }
             }catch{
-                Destroy(this.gameObject);
+                //Destroy(this.gameObject);
             }
         }
 
