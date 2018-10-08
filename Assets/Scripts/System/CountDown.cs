@@ -13,9 +13,8 @@ public class CountDown : MonoBehaviour {
     GameObject Overlay;
     [SerializeField]
     GameObject PauseScreen;
-
-    void FixedUpdate (){
-        CountDownTimer -= 1 * Time.deltaTime;
+    void Update (){
+        CountDownTimer -= 0.01f;
         if (CountDownTimer > 0.5){
             Timer.text = "- " + CountDownTimer.ToString("F0") + " -";
         }else{
@@ -27,10 +26,16 @@ public class CountDown : MonoBehaviour {
             GameObject.Find("Player").GetComponent<PlayerController>().Activate(true);
                 if (CountDownTimer < -0.25){
                 GameObject.Find("ObjectSpawner").GetComponent<Spawner>().Activate(true);
+
                     PauseScreen.SetActive(true);
+                    PauseScreen.GetComponent<Pause>().PauseBlocks(false);
                     Timer.text = "";
                     CountDownTimer = 3.5f;
+                    Time.timeScale = 1;
+                    tmp.a -= 140f;
+                    Overlay.GetComponent<Image>().color = tmp;
                     gameObject.SetActive(false);
+
                 //Destroy(this.gameObject);
                 }
             }catch{
@@ -39,4 +44,5 @@ public class CountDown : MonoBehaviour {
         }
 
 	}
+
 }

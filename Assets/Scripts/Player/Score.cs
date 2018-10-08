@@ -12,10 +12,9 @@ public class Score : MonoBehaviour {
         GameObject.Find("ScoreUI").GetComponent<ScoreNumber>().UpdateScore(PlayerScore);
     }
 
-    private void Update()
+    public int GetScore()
     {
-
+        return PlayerScore;
     }
-
 
 }
