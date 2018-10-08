@@ -30,6 +30,12 @@ public class Pause : MonoBehaviour
         Mouse.text = "(" + MouseSlider.value.ToString("F2") + ")";
     }
 
+    void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus && !toggle)
+            pauseSystem();
+    }
+
     public void ContinueSong()
     {
         if(!song.isPlaying)

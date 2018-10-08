@@ -6402,7 +6402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.042039394, a: 1}
+  m_Color: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6878,7 +6878,6 @@ MonoBehaviour:
   Timer: {fileID: 728112807}
   Overlay: {fileID: 838577328}
   PauseScreen: {fileID: 864341848}
-  song: {fileID: 2125550609}
 --- !u!114 &838577331
 MonoBehaviour:
   m_ObjectHideFlags: 0
