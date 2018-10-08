@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WallMovement : MonoBehaviour {
-
     bool isAllowedToMove;
     [SerializeField]
     private float speed;

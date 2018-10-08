@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Pause : MonoBehaviour {
+
     bool toggle;
     [SerializeField]
     GameObject GUI;

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CountDown : MonoBehaviour {
+
     float CountDownTimer = 3.5f;
     [SerializeField]
     Text Timer;
@@ -16,9 +17,9 @@ public class CountDown : MonoBehaviour {
     void FixedUpdate (){
         CountDownTimer -= 1 * Time.deltaTime;
         if (CountDownTimer > 0.5){
-            Timer.text = CountDownTimer.ToString("F0");
+            Timer.text = "- " + CountDownTimer.ToString("F0") + " -";
         }else{
-            Timer.text = "GO";
+            Timer.text = "- GO -";
             try{
             Color tmp = Overlay.GetComponent<Image>().color;
             tmp.a -= 0.05f;

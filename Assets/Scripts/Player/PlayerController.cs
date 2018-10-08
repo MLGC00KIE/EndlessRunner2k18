@@ -28,6 +28,11 @@ public class PlayerController : MonoBehaviour
             Vector3 delta = new Vector3(h, 0, 0);
             m.Move(delta);
         }
+        else
+        {
+            Vector3 delta = new Vector3(0, 0, 0);
+            m.Move(delta);
+        }
     }
 
     private void FixedUpdate()
