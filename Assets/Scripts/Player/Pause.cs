@@ -52,12 +52,20 @@ public class Pause : MonoBehaviour {
         toggle = !toggle;
         GUI.SetActive(toggle);
         if (toggle){
-            song.Pause();
+            try{
+                song.Pause();
+            }catch{
+                Debug.Log("song not found..");
+            }
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
         }else{
-            song.Play();
-            Cursor.lockState = CursorLockMode.Locked;
+            try{ 
+                song.Play();
+            }catch{
+                Debug.Log("song not found..");
+            }
+        Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
         }
     }
