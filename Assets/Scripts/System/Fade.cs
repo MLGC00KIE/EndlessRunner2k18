@@ -6,13 +6,22 @@ using UnityEngine.UI;
 
 public class Fade : MonoBehaviour {
 
+    bool Go;
+    string Stage;
+
+    public void ChangeLevel(string LevelName){
+        Go = true;
+        Stage = LevelName;
+    } 
+
 	void Update () {
-        Color tmp = gameObject.GetComponent<Image>().color;
-        tmp.a += 0.01f;
-        gameObject.GetComponent<Image>().color = tmp;
-        if(tmp.a >= 1)
-        {
-            SceneManager.LoadScene("error");
+        if (Go){
+            Color tmp = gameObject.GetComponent<Image>().color;
+            tmp.a += 0.01f;
+            gameObject.GetComponent<Image>().color = tmp;
+            if (tmp.a >= 1){
+                SceneManager.LoadScene(Stage);
+            }
         }
     }
 }
