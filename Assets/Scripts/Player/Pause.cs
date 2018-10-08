@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
 {
-
-
     GameObject[] blocks;
     bool toggle;
     [SerializeField]
@@ -30,6 +28,12 @@ public class Pause : MonoBehaviour
     {
         PlayerPrefs.SetFloat("MouseSpeed", MouseSlider.value);
         Mouse.text = "(" + MouseSlider.value.ToString("F2") + ")";
+    }
+
+    public void ContinueSong()
+    {
+        if(!song.isPlaying)
+        song.Play();
     }
 
     void Update()
@@ -102,7 +106,6 @@ public class Pause : MonoBehaviour
         {
             try
             {
-                song.Play();
                 gameObject.SetActive(false);
                 CountDown.SetActive(true);
             }

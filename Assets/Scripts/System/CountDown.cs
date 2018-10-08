@@ -13,25 +13,38 @@ public class CountDown : MonoBehaviour {
     GameObject Overlay;
     [SerializeField]
     GameObject PauseScreen;
+    Color Default;
+    GameObject Player;
+
+    private void Start()
+    {
+        Default = Timer.color;
+        CountDownTimer = 3.5f;
+        Player = GameObject.Find("Player");
+    }
+
     void Update (){
-        CountDownTimer -= 0.01f;
+        CountDownTimer -= 1 * Time.unscaledDeltaTime;
         if (CountDownTimer > 0.5){
             Timer.text = "- " + CountDownTimer.ToString("F0") + " -";
         }else{
             Timer.text = "- GO -";
-            try{
+            Timer.color -= new Color(0, 0, 0, 1f) * Time.unscaledDeltaTime;
+            try
+            {
             Color tmp = Overlay.GetComponent<Image>().color;
             tmp.a -= 0.05f;
             Overlay.GetComponent<Image>().color = tmp;
-            GameObject.Find("Player").GetComponent<PlayerController>().Activate(true);
-                if (CountDownTimer < -0.25){
+            Player.GetComponent<PlayerController>().Activate(true);
+                PauseScreen.GetComponent<Pause>().ContinueSong();
                 GameObject.Find("ObjectSpawner").GetComponent<Spawner>().Activate(true);
-
+                Time.timeScale = 1;
+                if (CountDownTimer < -0.25){
                     PauseScreen.SetActive(true);
                     PauseScreen.GetComponent<Pause>().PauseBlocks(false);
                     Timer.text = "";
+                    Timer.color = Default;
                     CountDownTimer = 3.5f;
-                    Time.timeScale = 1;
                     tmp.a -= 140f;
                     Overlay.GetComponent<Image>().color = tmp;
                     gameObject.SetActive(false);

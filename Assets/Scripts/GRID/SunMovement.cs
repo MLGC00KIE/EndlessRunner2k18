@@ -7,8 +7,8 @@ public class SunMovement : MonoBehaviour {
     [SerializeField]
     float Speed = 0.1f;
     private float StartingPos;
-    [SerializeField]
-    float Distance = 1.05f;
+    //[SerializeField]
+    //float Distance = 1.05f;
     private float DefaultScale;
     	
 	// Update is called once per frame

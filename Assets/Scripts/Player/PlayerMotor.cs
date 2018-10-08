@@ -8,8 +8,8 @@ public class PlayerMotor : MonoBehaviour
     private Vector3 velo = Vector3.zero;
     [SerializeField]
     private float maxX = 3;
-    [SerializeField]
-    private float tiltAmount = 0.1f;
+    //[SerializeField]
+    //private float tiltamount = 0.1f;
     [SerializeField]
     private float tiltSpeed;
     [SerializeField]
