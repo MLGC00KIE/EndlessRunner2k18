@@ -5,14 +5,16 @@ using System.IO;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class Console : MonoBehaviour {
-
-    public InputField InputField;
+    [SerializeField]
+    InputField InputField;
     string Command;
     bool active;
-    public Text ConsoleText;
+    [SerializeField]
+    Text ConsoleText;
     
     bool Toggle;
-    public GameObject TargetPos;
+    [SerializeField]
+    GameObject TargetPos;
 
     private void Update()
     {

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour {
     void Start(){
         Cursor.lockState = CursorLockMode.None;
+        GameObject.Find("ObjectSpawner").GetComponent<Spawner>().Activate(false);
     }
 
     public void restart(){

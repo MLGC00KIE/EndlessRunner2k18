@@ -6,10 +6,14 @@ using UnityEngine.UI;
 
 public class Pause : MonoBehaviour {
     bool toggle;
-    public GameObject GUI;
-    public AudioSource song;
-    public Slider MouseSlider;
-    public Text Mouse;
+    [SerializeField]
+    GameObject GUI;
+    [SerializeField]
+    AudioSource song;
+    [SerializeField]
+    Slider MouseSlider;
+    [SerializeField]
+    Text Mouse;
     void Start(){
         Cursor.lockState = CursorLockMode.Locked;
         MouseSlider.value = PlayerPrefs.GetFloat("MouseSpeed", 0.2f);

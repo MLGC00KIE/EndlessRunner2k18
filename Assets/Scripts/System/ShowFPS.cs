@@ -5,7 +5,8 @@ using System.Collections;
 public class ShowFPS : MonoBehaviour
 {
     float deltaTime = 0.0f;
-    public Text Text;
+    [SerializeField]
+    Text Text;
     float color2;
     float color1;
 

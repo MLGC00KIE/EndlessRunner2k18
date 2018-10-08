@@ -8,9 +8,11 @@ public class GridMovement : MonoBehaviour
     [SerializeField]
     GameObject PlayerObject;
 
-    public float GridSpeed = 0.1f;
+    [SerializeField]
+    float GridSpeed = 0.1f;
     private float StartingPos;
-    public float Distance = 1.05f;
+    [SerializeField]
+    float Distance = 1.05f;
 
     // Use this for initialization
     void Start () {

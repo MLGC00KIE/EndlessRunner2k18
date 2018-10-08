@@ -5,18 +5,18 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Settings : MonoBehaviour {
+    [SerializeField]Dropdown ResMenu;
+    [SerializeField]Dropdown QualMenu;
+    [SerializeField]Toggle FullToggle;
+    [SerializeField]Toggle Percentage;
+    [SerializeField]Toggle FPS;
+    [SerializeField]Toggle vSync;
+    [SerializeField]Slider MouseMenu;
+    [SerializeField]Slider MusicMenu;
+    [SerializeField]Slider AudioMenu;
+    [SerializeField]Text MouseText;
+    [SerializeField]InputField Name;
 
-    public Dropdown ResMenu;
-    public Dropdown QualMenu;
-    public Toggle FullToggle;
-    public Toggle Percentage;
-    public Toggle FPS;
-    public Toggle vSync;
-    public Slider MouseMenu;
-    public Slider MusicMenu;
-    public Slider AudioMenu;
-    public Text MouseText;
-    public InputField Name;
 
     private bool fullscreen;
     

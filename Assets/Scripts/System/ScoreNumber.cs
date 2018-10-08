@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreNumber : MonoBehaviour {
-    public Text ScoreUI;
+    [SerializeField]
+    Text ScoreUI;
 
     void Start(){
         ScoreUI.text = "- SCORE: 0 -";

@@ -13,8 +13,14 @@ public class Spawner : MonoBehaviour {
     private float maxX;
     [SerializeField]
     private float timeBetweenSpawn;
+    [SerializeField]
+    bool Active;
 
     private float elapsed;
+
+    public void Activate(bool State){
+        Active = State;
+    }
 
     private void Awake()
     {
@@ -42,11 +48,14 @@ public class Spawner : MonoBehaviour {
 
 
         // spawn a cube each {timeBetweenSpawn} seconds
-        elapsed += Time.deltaTime;
-        if (elapsed >= timeBetweenSpawn)
+        if (Active)
         {
-            elapsed = elapsed % timeBetweenSpawn;
-            spawnRandomCube();
+            elapsed += Time.deltaTime;
+            if (elapsed >= timeBetweenSpawn)
+            {
+                elapsed = elapsed % timeBetweenSpawn;
+                spawnRandomCube();
+            }
         }
         //spawnRandomCube();
 

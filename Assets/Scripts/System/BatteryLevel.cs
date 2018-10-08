@@ -5,7 +5,8 @@ using UnityEngine.UI;
 using System.Diagnostics;
 
 public class BatteryLevel : MonoBehaviour {
-    public Text Percentage;
+    [SerializeField]
+    Text Percentage;
     float color1;
     float color2;
     float PCBattery;

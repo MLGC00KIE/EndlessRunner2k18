@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MenuManager : MonoBehaviour {
-    public Text Version;
+public class MenuManager : MonoBehaviour
+{
+    [SerializeField]
+    Text Version;
     private void Awake() {
         if (Version != null) { 
             Version.text = "Ver: " + Application.version;

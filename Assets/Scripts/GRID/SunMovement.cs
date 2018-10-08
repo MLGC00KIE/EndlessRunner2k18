@@ -4,10 +4,11 @@ using UnityEngine;
 
 
 public class SunMovement : MonoBehaviour {
-    
-    public float Speed = 0.1f;
+    [SerializeField]
+    float Speed = 0.1f;
     private float StartingPos;
-    public float Distance = 1.05f;
+    [SerializeField]
+    float Distance = 1.05f;
     private float DefaultScale;
     	
 	// Update is called once per frame

@@ -2,7 +2,8 @@
 
 public class ShakeEffect : MonoBehaviour
 {
-    public float Magnitude = 0.5f;
+    [SerializeField]
+    float Magnitude = 0.5f;
 
     Vector3 m_startPos;
     float x, y, z;
