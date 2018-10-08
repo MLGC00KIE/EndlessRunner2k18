@@ -19,7 +19,7 @@ public class HitDetection : MonoBehaviour {
 
     private void OnTriggerEnter(Collider col)
     {
-        // detects if the player is touching an object and deletes it
+        // detects if the player is touching an object and deletes its collider to not trigger it again
         if (col.transform.tag == "wall")
         {
             Debug.Log("got hit by " + col.transform.name);

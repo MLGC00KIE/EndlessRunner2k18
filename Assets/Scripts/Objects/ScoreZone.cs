@@ -41,6 +41,7 @@ public class ScoreZone : MonoBehaviour {
         Debug.DrawRay((transform.position + new Vector3(-boxWidth, 0, -distanceFromBox)), new Vector3(boxWidth, 0, 0), Color.red);
         if (Physics.Raycast((transform.position + new Vector3(-boxWidth / 1.5f, 0, -distanceFromBox)), new Vector3(boxWidth / 2, 0, 0), out hit, boxWidth))
         {
+            // if it hits player addscore
             if (hit.transform.tag == "Player" && !firstLinePassed)
             {
                 Debug.Log(hit.transform.name);
@@ -55,6 +56,8 @@ public class ScoreZone : MonoBehaviour {
         Debug.DrawRay((transform.position + new Vector3(-boxWidth / 1.5f, 0, -extraDistanceFromBox)), new Vector3(boxWidth/2, 0, 0), Color.red);
         if (Physics.Raycast((transform.position + new Vector3(-boxWidth / 1.5f, 0, -extraDistanceFromBox)), new Vector3(boxWidth/2, 0, 0), out hit, boxWidth / 2))
         {
+
+            // if it hits player addscore
             if (hit.transform.tag == "Player" && !secondLinePassed)
             {
                 Debug.Log(hit.transform.name);

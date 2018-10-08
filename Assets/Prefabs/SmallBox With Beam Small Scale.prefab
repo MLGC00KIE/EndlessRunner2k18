@@ -464,5 +464,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 845267c98dfcce945a97e2fbeff8c948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceFromBox: 5
-  extraDistanceFromBox: 3
+  distanceFromBox: 3
+  extraDistanceFromBox: 2.5

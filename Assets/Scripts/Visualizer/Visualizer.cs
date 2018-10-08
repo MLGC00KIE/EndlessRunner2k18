@@ -81,6 +81,7 @@ public class Visualizer : MonoBehaviour {
         UpdateVisualiser();
     }
 
+    // update the scale of all the visualizer lines
     private void UpdateVisualiser()
     {
         int visualIndex = 0;
@@ -89,6 +90,7 @@ public class Visualizer : MonoBehaviour {
 
         while (visualIndex < lineAmount)
         {
+            // get values needed
             int j = 0;
             float sum = 0;
             while (j < averageSize)
@@ -98,14 +100,18 @@ public class Visualizer : MonoBehaviour {
                 j++;
             }
 
+            // determine size
             float scaleY = sum / averageSize * visualizerStrenght;
             lineScale[visualIndex] -= Time.deltaTime * smoothSpeed;
+
             if (lineScale[visualIndex] < scaleY)
                 lineScale[visualIndex] = scaleY;
 
+            // if its too big set to max
             if (lineScale[visualIndex] > maxLineScale)
                 lineScale[visualIndex] = maxLineScale;
 
+            // final scaling
             lineListR[visualIndex].localScale = new Vector3(0.2f, 2 * lineScale[visualIndex], 0.2f);
             lineListL[visualIndex].localScale = new Vector3(0.2f, 2 * lineScale[visualIndex], 0.2f);
             visualIndex++;
