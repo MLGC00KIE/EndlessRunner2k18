@@ -105,6 +105,7 @@ public class Pause : MonoBehaviour
             GameObject.Find("Player").GetComponent<PlayerController>().Activate(false);
             GameObject.Find("ObjectSpawner").GetComponent<Spawner>().Activate(false);
             PauseBlocks(true);
+            GameObject.Find("Console").GetComponent<Console>().Logger("<color=red>Mouse is free!\n</color>");
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
         }
@@ -117,8 +118,11 @@ public class Pause : MonoBehaviour
             }
             catch
             {
-                Debug.Log("Error: song not found..");
+                GameObject.Find("Console").GetComponent<Console>().Logger("<color=red>Big error, Cannot find song?!\n</color>");
+
             }
+            GameObject.Find("Console").GetComponent<Console>().Logger("<color=red>cursor is locked.\n</color>");
+
             Cursor.lockState = CursorLockMode.Locked;
             //Time.timeScale = 1;
         }

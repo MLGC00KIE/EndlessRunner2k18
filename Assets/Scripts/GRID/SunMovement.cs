@@ -13,10 +13,10 @@ public class SunMovement : MonoBehaviour {
     	
 	// Update is called once per frame
 	void FixedUpdate () {
-        transform.position += new Vector3(0, 0.01f, 0) * Speed;
-        transform.localScale += new Vector3(0, 0.1F, 0) / 700 * Speed;
+        transform.position += new Vector3(0, 0.01f, 0) * Speed;//beweeg
+        transform.localScale += new Vector3(0, 0.1F, 0) / 700 * Speed;//groei
 
-        if(transform.position.y >= 14)
+        if(transform.position.y >= 14)//als vorbij punt reset.
         {
             transform.position = new Vector3(transform.position.x, 1.8f, transform.position.z);
             transform.localScale = new Vector3(transform.localScale.x, 0.001f, transform.localScale.z);

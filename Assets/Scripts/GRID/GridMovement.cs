@@ -16,28 +16,27 @@ public class GridMovement : MonoBehaviour
 
     // Use this for initialization
     void Start () {
-        StartingPos = transform.position.z;
+        StartingPos = transform.position.z; //Start positie is begin positie van object.
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-        transform.position += new Vector3(0, 0, -1) * GridSpeed;
 
-        if (transform.position.z <= -Distance + StartingPos)
+	void FixedUpdate () {
+        transform.position += new Vector3(0, 0, -1) * GridSpeed; //Laat grid bewegen
+
+        if (transform.position.z <= -Distance + StartingPos) //Als hij voorbij punt is teleporteer terug.
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, StartingPos);
         }
 
-        /*if (GameScore == OldScore + 10)
+        /*if (GameScore == OldScore + 10) //als er 10 meer punten zijn
         {
-            OldScore = GameScore;
-            GridSpeed += 0.01f;
+            OldScore = GameScore; //verander requirements
+            GridSpeed += 0.01f; //voeg snelheid toe
         }*/
 
 
-        if (PlayerObject == null)
+        if (PlayerObject == null)//als speler niet bestaat
         {
-            GridSpeed = 0.01f;
+            GridSpeed = 0.01f; //word langzaam
         }
 	}
 }
