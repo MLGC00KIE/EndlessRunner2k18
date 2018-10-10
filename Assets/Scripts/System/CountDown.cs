@@ -22,9 +22,11 @@ public class CountDown : MonoBehaviour {
         Player = GameObject.Find("Player");
     }
 
-    void OnEnable()
+    private void OnEnable()
     {
-        Timer.color = Default;
+        Color tmp = Overlay.GetComponent<Image>().color;
+        tmp.a -= 0.05f;
+        Overlay.GetComponent<Image>().color = tmp;
     }
 
     void Update (){
@@ -49,8 +51,8 @@ public class CountDown : MonoBehaviour {
                     PauseScreen.SetActive(true);
                     PauseScreen.GetComponent<Pause>().PauseBlocks(true);
                     Timer.text = "";
+                    Timer.color = Default;
                     CountDownTimer = 3.5f;
-                    tmp.a -= 140f;
                     Overlay.GetComponent<Image>().color = tmp;
                     gameObject.SetActive(false);
 
