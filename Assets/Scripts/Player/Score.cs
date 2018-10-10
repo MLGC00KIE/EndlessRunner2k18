@@ -9,8 +9,12 @@ public class Score : MonoBehaviour {
 
     public void AddScore(int Amount){
         PlayerScore += Amount;
-        GameObject.Find("Console").GetComponent<Console>().Logger("<color=orange>Points: + <color=cyan>" + Amount + "</color>.\n</color>");
-        GameObject.Find("ScoreUI").GetComponent<ScoreNumber>().UpdateScore(PlayerScore);
+        try
+        {
+            GameObject.Find("Console").GetComponent<Console>().Logger("<color=orange>Points: + <color=cyan>" + Amount + "</color>.\n</color>");
+            GameObject.Find("ScoreUI").GetComponent<ScoreNumber>().UpdateScore(PlayerScore);
+        }
+        catch { }
     }
 
     public int GetScore()

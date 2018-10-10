@@ -22,6 +22,11 @@ public class CountDown : MonoBehaviour {
         Player = GameObject.Find("Player");
     }
 
+    void OnEnable()
+    {
+        Timer.color = Default;
+    }
+
     void Update (){
         CountDownTimer -= 1 * Time.unscaledDeltaTime;
         if (CountDownTimer > 0.5){
@@ -44,7 +49,6 @@ public class CountDown : MonoBehaviour {
                     PauseScreen.SetActive(true);
                     PauseScreen.GetComponent<Pause>().PauseBlocks(true);
                     Timer.text = "";
-                    Timer.color = Default;
                     CountDownTimer = 3.5f;
                     tmp.a -= 140f;
                     Overlay.GetComponent<Image>().color = tmp;
@@ -53,7 +57,12 @@ public class CountDown : MonoBehaviour {
                 //Destroy(this.gameObject);
                 }
             }catch{
-                GameObject.Find("Console").GetComponent<Console>().Logger("<color=red>Big error, Countdown did not continue the game!\n</color>");
+                try
+                {
+                    GameObject.Find("Console").GetComponent<Console>().Logger("<color=red>Big error, Countdown did not continue the game!\n</color>");
+                } catch {
+
+                }
             }
         }
 
