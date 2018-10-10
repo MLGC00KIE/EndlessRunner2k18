@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
 {
-
-
     GameObject[] blocks;
     bool toggle;
     [SerializeField]
@@ -30,6 +28,18 @@ public class Pause : MonoBehaviour
     {
         PlayerPrefs.SetFloat("MouseSpeed", MouseSlider.value);
         Mouse.text = "(" + MouseSlider.value.ToString("F2") + ")";
+    }
+
+    void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus && !toggle)
+            pauseSystem();
+    }
+
+    public void ContinueSong()
+    {
+        if(!song.isPlaying)
+        song.Play();
     }
 
     void Update()
@@ -95,6 +105,7 @@ public class Pause : MonoBehaviour
             GameObject.Find("Player").GetComponent<PlayerController>().Activate(false);
             GameObject.Find("ObjectSpawner").GetComponent<Spawner>().Activate(false);
             PauseBlocks(true);
+            GameObject.Find("Console").GetComponent<Console>().Logger("<color=red>Mouse is free!\n</color>");
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
         }
@@ -102,14 +113,16 @@ public class Pause : MonoBehaviour
         {
             try
             {
-                song.Play();
                 gameObject.SetActive(false);
                 CountDown.SetActive(true);
             }
             catch
             {
-                Debug.Log("Error: song not found..");
+                GameObject.Find("Console").GetComponent<Console>().Logger("<color=red>Big error, Cannot find song?!\n</color>");
+
             }
+            GameObject.Find("Console").GetComponent<Console>().Logger("<color=red>cursor is locked.\n</color>");
+
             Cursor.lockState = CursorLockMode.Locked;
             //Time.timeScale = 1;
         }

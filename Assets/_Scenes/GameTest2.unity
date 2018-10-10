@@ -315,7 +315,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1
-  Distance: 1
 --- !u!23 &76169886
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6313,7 +6312,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1
-  Distance: 1
 --- !u!23 &720750149
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6404,7 +6402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.042039394, a: 1}
+  m_Color: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -12692,7 +12690,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1
-  Distance: 1
 --- !u!23 &1314898015
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13123,7 +13120,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1
-  Distance: 1
 --- !u!23 &1451634730
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13869,7 +13865,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1
-  Distance: 1
 --- !u!23 &1915746513
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18953,7 +18948,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxX: 9.35
-  tiltAmount: -10
   tiltSpeed: 0.5
   movementLerpSpeed: 0.5
 --- !u!114 &2074773202
@@ -19310,7 +19304,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1
-  Distance: 1
 --- !u!23 &2084427552
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19469,7 +19462,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9b7c13254a6e43f4a969210297d64a05, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
