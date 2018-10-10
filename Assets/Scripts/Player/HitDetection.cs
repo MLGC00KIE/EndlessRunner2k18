@@ -32,6 +32,7 @@ public class HitDetection : MonoBehaviour {
         // detects if the player is touching an object and deletes its collider to not trigger it again
         if (col.transform.tag == "wall")
         {
+            Hit.pitch = Random.Range(0.5f, 1);
             Hit.Play();
             Debug.Log("got hit by " + col.transform.name);
             l.SetHealth(l.GetHealth() - 1);
