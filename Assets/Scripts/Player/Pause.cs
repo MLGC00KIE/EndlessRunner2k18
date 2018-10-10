@@ -18,6 +18,7 @@ public class Pause : MonoBehaviour
     Text Mouse;
     [SerializeField]
     GameObject CountDown;
+    bool isFirstTime = true;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -39,7 +40,15 @@ public class Pause : MonoBehaviour
     public void ContinueSong()
     {
         if(!song.isPlaying)
-        song.Play();
+        {
+            if (!isFirstTime)
+                song.UnPause();
+            else if (isFirstTime)
+            {
+                song.Play();
+                isFirstTime = false;
+            }        
+        }
     }
 
     void Update()
@@ -107,6 +116,7 @@ public class Pause : MonoBehaviour
             }
             GameObject.Find("Player").GetComponent<PlayerController>().Activate(false);
             GameObject.Find("ObjectSpawner").GetComponent<Spawner>().Activate(false);
+            song.Pause();
             PauseBlocks(true);
             try
             {
