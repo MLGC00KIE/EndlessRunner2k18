@@ -101,7 +101,15 @@ public class Visualizer : MonoBehaviour {
             }
 
             // determine size
-            float scaleY = sum / averageSize * visualizerStrenght;
+            float scaleY;
+            if (sum / averageSize * visualizerStrenght <= 0)
+            {
+                scaleY = 0.0001f;
+            } else
+            {
+                scaleY = sum / averageSize * visualizerStrenght;
+            }
+
             lineScale[visualIndex] -= Time.deltaTime * smoothSpeed;
 
             if (lineScale[visualIndex] < scaleY)
