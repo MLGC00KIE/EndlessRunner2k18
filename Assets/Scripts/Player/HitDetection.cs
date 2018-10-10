@@ -6,7 +6,12 @@ public class HitDetection : MonoBehaviour {
 
     [SerializeField]
     private float timeBetweenHit;
-
+    [SerializeField]
+    GameObject hitEffectObject;
+    ParticleSystem hitEffect;
+    [SerializeField]
+    GameObject deathEffectObject;
+    ParticleSystem deathEffect;
     private bool canHit;
     Lives l;
 
@@ -15,6 +20,8 @@ public class HitDetection : MonoBehaviour {
     private void Awake()
     {
         l = GetComponent<Lives>();
+        hitEffect = hitEffectObject.GetComponent<ParticleSystem>();
+        deathEffect = deathEffectObject.GetComponent<ParticleSystem>();
     }
 
     private void OnTriggerEnter(Collider col)
@@ -25,6 +32,16 @@ public class HitDetection : MonoBehaviour {
             Debug.Log("got hit by " + col.transform.name);
             l.SetHealth(l.GetHealth() - 1);
             Destroy(col.GetComponent<Collider>());
+            
+
+            if (l.GetHealth() >= 1)
+            {
+                hitEffect.Play();
+            } else
+            {
+                deathEffect.Play();
+            }
+
 
         }
     }
