@@ -21,13 +21,7 @@ public class CountDown : MonoBehaviour {
         CountDownTimer = 3.5f;
         Player = GameObject.Find("Player");
     }
-
-    private void OnEnable()
-    {
-        Color tmp = Overlay.GetComponent<Image>().color;
-        tmp.a -= 0.05f;
-        Overlay.GetComponent<Image>().color = tmp;
-    }
+    
 
     void Update (){
         CountDownTimer -= 1 * Time.unscaledDeltaTime;
@@ -38,9 +32,6 @@ public class CountDown : MonoBehaviour {
             Timer.color -= new Color(0, 0, 0, 1f) * Time.unscaledDeltaTime;
             try
             {
-            Color tmp = Overlay.GetComponent<Image>().color;
-            tmp.a -= 0.05f;
-            Overlay.GetComponent<Image>().color = tmp;
                 Player.GetComponent<PlayerController>().Activate(true);
                 PauseScreen.GetComponent<Pause>().ContinueSong();
                 GameObject.Find("ObjectSpawner").GetComponent<Spawner>().Activate(true);
@@ -53,7 +44,6 @@ public class CountDown : MonoBehaviour {
                     Timer.text = "";
                     Timer.color = Default;
                     CountDownTimer = 3.5f;
-                    Overlay.GetComponent<Image>().color = tmp;
                     gameObject.SetActive(false);
 
                 //Destroy(this.gameObject);
