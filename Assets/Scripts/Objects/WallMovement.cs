@@ -12,11 +12,17 @@ public class WallMovement : MonoBehaviour {
     private float targetScore = 10;
     [SerializeField]
     private float speedIncrementor = 0.1f;
+    Score scoreObject;
 
-	// Update is called once per frame
-	void FixedUpdate () {
+    private void Start()
+    {
+        scoreObject = GameObject.Find("Player").GetComponent<Score>();
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () {
         // update speed multiplier based on score
-        if (GameObject.Find("Player").GetComponent<Score>().GetScore() >= targetScore) {
+        if (scoreObject.GetScore() >= targetScore) {
             speedMult += speedIncrementor;
             targetScore += 10;
         }
