@@ -13,11 +13,14 @@ public class ScoreZone : MonoBehaviour {
     private float extraDistanceFromBox;
     private Score scoreScript;
 
+    AudioSource Points;
+
     bool firstLinePassed;
     bool secondLinePassed;
 
 	// Use this for initialization
 	void Start () {
+        Points = gameObject.GetComponent<AudioSource>();
         // get box size
         boxSize = GetComponent<Collider>().bounds.size;
         boxWidth = boxSize.x;
@@ -62,7 +65,8 @@ public class ScoreZone : MonoBehaviour {
             {
                 Debug.Log(hit.transform.name);
                 // add score thingy for being closer
-                scoreScript.AddScore(3);
+                Points.Play();
+                scoreScript.AddScore(2);
                 secondLinePassed = true;
                 Destroy(this);
             }

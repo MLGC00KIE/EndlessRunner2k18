@@ -14,11 +14,14 @@ public class HitDetection : MonoBehaviour {
     ParticleSystem deathEffect;
     private bool canHit;
     Lives l;
+    AudioSource Hit;
+
 
     private float elapsed;
 
     private void Awake()
     {
+        Hit = gameObject.GetComponent<AudioSource>();
         l = GetComponent<Lives>();
         hitEffect = hitEffectObject.GetComponent<ParticleSystem>();
         deathEffect = deathEffectObject.GetComponent<ParticleSystem>();
@@ -29,6 +32,7 @@ public class HitDetection : MonoBehaviour {
         // detects if the player is touching an object and deletes its collider to not trigger it again
         if (col.transform.tag == "wall")
         {
+            Hit.Play();
             Debug.Log("got hit by " + col.transform.name);
             l.SetHealth(l.GetHealth() - 1);
             Destroy(col.GetComponent<Collider>());
