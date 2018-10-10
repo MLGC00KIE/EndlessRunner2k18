@@ -429,6 +429,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  speedMult: 1
+  targetScore: 10
+  speedIncrementor: 0.03
 --- !u!114 &114448602001465626
 MonoBehaviour:
   m_ObjectHideFlags: 1

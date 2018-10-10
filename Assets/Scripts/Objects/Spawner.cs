@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour {
+public class Spawner : MonoBehaviour
+{
     [SerializeField]
     private GameObject Visualizer;
     [SerializeField]
@@ -18,25 +19,22 @@ public class Spawner : MonoBehaviour {
 
     private float elapsed;
 
-    public void Activate(bool State){
+    public void Activate(bool State)
+    {
         Active = State;
     }
 
     private void Awake()
     {
         Vis = Visualizer.GetComponent<Visualizer>();
-
         // make a new empty gameobject to use as the parent for the cubes/walls
         Parent = new GameObject();
         Parent.name = "Walls";
-
     }
 
     void Update()
     {
         //if(gameover == true){stop spawning}
-
-
         // WIP spawn cubes on music
         dictAudio = Vis.getAudioData();
         float rmsValue;
@@ -45,8 +43,6 @@ public class Spawner : MonoBehaviour {
             //Debug.Log(rmsValue);
         }
         // ----------------------------------
-
-
         // spawn a cube each {timeBetweenSpawn} seconds
         if (Active)
         {
@@ -58,22 +54,13 @@ public class Spawner : MonoBehaviour {
             }
         }
         //spawnRandomCube();
-
-
-
-
-
     }
 
     // spawns a cube on a random x position
     void spawnRandomCube()
     {
         GameObject go = Instantiate(Cube, Parent.transform);
-
-
         go.transform.position = new Vector3(getRandomX(), -0.22f, 30);
-
-
     }
 
     // read the function name...

@@ -28,7 +28,7 @@ public class CountDown : MonoBehaviour {
                 GameObject.Find("ObjectSpawner").GetComponent<Spawner>().Activate(true);
 
                     PauseScreen.SetActive(true);
-                    PauseScreen.GetComponent<Pause>().PauseBlocks(false);
+                    PauseScreen.GetComponent<Pause>().PauseBlocks(true);
                     Timer.text = "";
                     CountDownTimer = 3.5f;
                     Time.timeScale = 1;
