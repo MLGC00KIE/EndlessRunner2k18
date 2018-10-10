@@ -73,18 +73,21 @@ public class Pause : MonoBehaviour
 
     }
 
-
-
     public void restart()
     {
         Time.timeScale = 1;
-        Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+        Scene scene = SceneManager.GetActiveScene();
+
+        try { GameObject.Find("SceneFader").GetComponent<FadeScript>().FadeToLevel(scene.name); }
+        catch { SceneManager.LoadScene(scene.name); }
     }
 
     public void quit()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Menu");
+
+        try { GameObject.Find("SceneFader").GetComponent<FadeScript>().FadeToLevel("Menu"); }
+        catch { SceneManager.LoadScene("Menu"); }
     }
 
     public void pauseSystem()

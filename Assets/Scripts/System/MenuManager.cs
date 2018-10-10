@@ -27,11 +27,13 @@ public class MenuManager : MonoBehaviour
 
     public void ChangeLevel(string LevelName)
     {
-        if (Application.CanStreamedLevelBeLoaded(LevelName)){
-            SceneManager.LoadScene(LevelName);
-            }else{
-            SceneManager.LoadScene("error");
-        }
+        /* if (Application.CanStreamedLevelBeLoaded(LevelName)){
+             SceneManager.LoadScene(LevelName);
+             }else{
+             SceneManager.LoadScene("error");
+         }*/
+        try { GameObject.Find("SceneFader").GetComponent<FadeScript>().FadeToLevel(LevelName); }
+        catch { SceneManager.LoadScene(LevelName); }
     }
 
     public void ApplicationQuit()
