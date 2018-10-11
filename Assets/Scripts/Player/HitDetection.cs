@@ -16,11 +16,15 @@ public class HitDetection : MonoBehaviour {
     Lives l;
     AudioSource Hit;
 
+    GameObject Cockpit;
+    [SerializeField]
+    GameObject GlitchMode;
 
     private float elapsed;
 
     private void Awake()
     {
+        Cockpit = GameObject.Find("Cockpit");
         Hit = gameObject.GetComponent<AudioSource>();
         l = GetComponent<Lives>();
         hitEffect = hitEffectObject.GetComponent<ParticleSystem>();
@@ -34,6 +38,9 @@ public class HitDetection : MonoBehaviour {
         {
             Hit.pitch = Random.Range(0.5f, 1);
             Hit.Play();
+            StartCoroutine(Blink());
+            StartCoroutine(Glitch());
+
             Debug.Log("got hit by " + col.transform.name);
             l.SetHealth(l.GetHealth() - 1);
             Destroy(col.GetComponent<Collider>());
@@ -49,7 +56,26 @@ public class HitDetection : MonoBehaviour {
 
 
         }
+
+        
     }
 
+
+    IEnumerator Blink()
+    {
+        for (int i = 0; i < 6; i++) {
+            Cockpit.SetActive(false);
+            yield return new WaitForSeconds(0.15f);
+            Cockpit.SetActive(true);
+            yield return new WaitForSeconds(0.15f);
+        }
+    }
+
+
+    IEnumerator Glitch(){
+        GlitchMode.SetActive(true);
+        yield return new WaitForSeconds(0.15f);
+        GlitchMode.SetActive(false);
+    }
 
 }

@@ -17,7 +17,7 @@ public class Lives : MonoBehaviour {
         // use health to determine ship size
 		if (lives <= 1)
         {
-            StartCoroutine(HealthTimer());
+            //StartCoroutine(HealthTimer());
             secondPart.SetActive(false);
         }
         if (lives > 1) {

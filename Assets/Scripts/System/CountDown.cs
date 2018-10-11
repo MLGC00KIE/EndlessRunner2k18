@@ -9,8 +9,6 @@ public class CountDown : MonoBehaviour {
     [SerializeField]
     Text Timer;
     [SerializeField]
-    GameObject Overlay;
-    [SerializeField]
     GameObject PauseScreen;
     Color Default;
     GameObject Player;
