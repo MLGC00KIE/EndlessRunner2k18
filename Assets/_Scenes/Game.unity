@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 57838027}
   - component: {fileID: 57838026}
   - component: {fileID: 57838028}
+  - component: {fileID: 57838029}
   m_Layer: 0
   m_Name: Glitch
   m_TagString: Untagged
@@ -372,6 +373,21 @@ MonoBehaviour:
   _horizontalShake: 0.146
   _colorDrift: 0.146
   _shader: {fileID: 4800000, guid: da33272284ea24f208f36998880990be, type: 3}
+--- !u!114 &57838029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 57838024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f90cd3dff80ff84ca37216bfe2756bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bleeding: 0.5
+  _fringing: 0.5
+  _scanline: 0.5
+  _shader: {fileID: 4800000, guid: 30c6511fedf271b4d98f894c9a250aea, type: 3}
 --- !u!1 &76169883
 GameObject:
   m_ObjectHideFlags: 0
