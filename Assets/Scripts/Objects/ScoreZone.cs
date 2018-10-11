@@ -6,9 +6,14 @@ public class ScoreZone : MonoBehaviour {
 
     Vector3 boxSize;
     float boxWidth;
+    float boxDepth;
 
     [SerializeField]
     private float distanceFromBox;
+    [SerializeField]
+    private float lowScoreLenght;
+    [SerializeField]
+    private float highScoreLength;
     [SerializeField]
     private float extraDistanceFromBox;
     private Score scoreScript;
@@ -27,6 +32,7 @@ public class ScoreZone : MonoBehaviour {
         // get box size
         boxSize = GetComponent<Collider>().bounds.size;
         boxWidth = boxSize.x;
+        boxDepth = boxSize.z;
         //scoreScript = FindObjectOfType<Score>();
         try
         {
@@ -43,9 +49,11 @@ public class ScoreZone : MonoBehaviour {
 
         RaycastHit hit;
 
+
+
         // check for raycasts hitting to add score to player
-        Debug.DrawRay((transform.position + new Vector3(-boxWidth, 0, -distanceFromBox)), new Vector3(boxWidth, 0, 0), Color.red);
-        if (Physics.Raycast((transform.position + new Vector3(-boxWidth / 1.5f, 0, -distanceFromBox)), new Vector3(boxWidth / 2, 0, 0), out hit, boxWidth))
+        Debug.DrawRay((transform.position + new Vector3(-boxWidth / 2, 0, -boxDepth)), new Vector3(0, 0, -lowScoreLenght), Color.red);
+        if (Physics.Raycast((transform.position + new Vector3(-boxWidth / 2, 0, -boxDepth)), new Vector3(0, 0, 1), out hit, lowScoreLenght))
         {
             // if it hits player addscore
             if (hit.transform.tag == "Player" && !firstLinePassed)
@@ -59,8 +67,8 @@ public class ScoreZone : MonoBehaviour {
 
 
         // check for raycasts hitting to add score to player
-        Debug.DrawRay((transform.position + new Vector3(-boxWidth / 1.5f, 0, -extraDistanceFromBox)), new Vector3(boxWidth/2, 0, 0), Color.red);
-        if (Physics.Raycast((transform.position + new Vector3(-boxWidth / 1.5f, 0, -extraDistanceFromBox)), new Vector3(boxWidth/2, 0, 0), out hit, boxWidth / 2))
+        Debug.DrawRay((transform.position + new Vector3(-boxWidth / 2, 0, -boxDepth)), new Vector3(0, 0, highScoreLength), Color.red);
+        if (Physics.Raycast((transform.position + new Vector3(-boxWidth / 2, 0, -boxDepth)), new Vector3(0, 0, 1), out hit, highScoreLength))
         {
 
             // if it hits player addscore
