@@ -13,6 +13,9 @@ public class ScoreZone : MonoBehaviour {
     private float extraDistanceFromBox;
     private Score scoreScript;
 
+    [SerializeField]
+    GameObject Lives;
+
     AudioSource Points;
 
     bool firstLinePassed;
@@ -65,6 +68,7 @@ public class ScoreZone : MonoBehaviour {
             {
                 Debug.Log(hit.transform.name);
                 // add score thingy for being closer
+                
                 Points.pitch = Random.Range(1, 2);
                 Points.Play();
                 scoreScript.AddScore(2);
