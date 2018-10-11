@@ -19,7 +19,7 @@ public class FadeScript : MonoBehaviour {
         if (!FadedIn)
         {
             Color tmp = gameObject.GetComponent<Image>().color;
-            tmp.a = 0 * Time.unscaledDeltaTime;
+            tmp.a -= 1 * Time.unscaledDeltaTime;
             gameObject.GetComponent<Image>().color = tmp;
             if (tmp.a <= 0)
                 FadedIn = true;
