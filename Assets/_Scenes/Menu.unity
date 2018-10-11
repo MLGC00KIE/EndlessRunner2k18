@@ -2008,7 +2008,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1265570886049946, guid: 59b859a9e6314464f99c251ff9f18e48, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114848068844289814, guid: 59b859a9e6314464f99c251ff9f18e48, type: 2}

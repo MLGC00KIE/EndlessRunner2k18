@@ -105,6 +105,8 @@ public class Pause : MonoBehaviour
         GUI.SetActive(toggle);
         if (toggle)
         {
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0;
             try
             {
                 song.Pause();
@@ -123,8 +125,6 @@ public class Pause : MonoBehaviour
                 GameObject.Find("Console").GetComponent<Console>().Logger("<color=red>Mouse is free!\n</color>");
             }
             catch { }
-                Cursor.lockState = CursorLockMode.None;
-            Time.timeScale = 0;
         }
         else
         {
@@ -148,7 +148,6 @@ public class Pause : MonoBehaviour
             }
             catch { }
             Cursor.lockState = CursorLockMode.Locked;
-            //Time.timeScale = 1;
         }
     }
 
