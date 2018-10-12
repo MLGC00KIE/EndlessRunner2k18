@@ -24,10 +24,10 @@ You can also spend speed points in the store.
 
 Please, collect as many as you can.
 
-Good luck, Player! 
+>Good luck, Player! 
 
-Game Over.
+>Game Over.
 
 I am SAGA. Your Smart Artificial Galaxy Assistent.
 
-New Highscore!
+>New Highscore!
