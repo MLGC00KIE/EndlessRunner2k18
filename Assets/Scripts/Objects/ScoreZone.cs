@@ -52,8 +52,8 @@ public class ScoreZone : MonoBehaviour {
 
 
         // check for raycasts hitting to add score to player
-        Debug.DrawRay((transform.position + new Vector3(-boxWidth / 2, 0, -boxDepth)), new Vector3(0, 0, -lowScoreLenght), Color.red);
-        if (Physics.Raycast((transform.position + new Vector3(-boxWidth / 2, 0, -boxDepth)), new Vector3(0, 0, 1), out hit, lowScoreLenght))
+        Debug.DrawRay((transform.position + new Vector3(-boxWidth / 2, 0, -1)), Vector3.back * lowScoreLenght, Color.red);
+        if (Physics.Raycast((transform.position + new Vector3(-boxWidth / 2, 0, -1)), Vector3.back, out hit, lowScoreLenght))
         {
             // if it hits player addscore
             if (hit.transform.tag == "Player" && !firstLinePassed)
@@ -67,8 +67,8 @@ public class ScoreZone : MonoBehaviour {
 
 
         // check for raycasts hitting to add score to player
-        Debug.DrawRay((transform.position + new Vector3(-boxWidth / 2, 0, -boxDepth)), new Vector3(0, 0, highScoreLength), Color.red);
-        if (Physics.Raycast((transform.position + new Vector3(-boxWidth / 2, 0, -boxDepth)), new Vector3(0, 0, 1), out hit, highScoreLength))
+        Debug.DrawRay((transform.position + new Vector3(-boxWidth / 2, 0, -1)), Vector3.back * highScoreLength, Color.red);
+        if (Physics.Raycast((transform.position + new Vector3(-boxWidth / 2, 0, -1)), Vector3.back, out hit, highScoreLength))
         {
 
             // if it hits player addscore
