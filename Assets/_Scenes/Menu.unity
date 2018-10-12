@@ -7624,17 +7624,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: '- LEADERBOARD -
 
-    1. NAME - SCORE
-
-    2. NAME - SCORE
-
-    3. NAME - SCORE
-
-    4. NAME - SCORE
-
-    5. NAME - SCORE
-
-    6. NAME - SCORE'
+    Work in progress.'
 --- !u!222 &1304646857
 CanvasRenderer:
   m_ObjectHideFlags: 0
